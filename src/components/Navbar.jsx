@@ -1,18 +1,3 @@
-// import React from "react";
-// import "../styles/Navbar.css";
-
-
-// function Navbar() {
-//   return (
-//     <nav className="navbar">
-//       <a href="/">Navbar</a>
-//     </nav>
-//   );
-// }
-
-// export default Navbar;
-
-
 
 import React from 'react';
 import { Grommet, Header as GrommetHeader, Heading,  Menu, Box, Button } from 'grommet';

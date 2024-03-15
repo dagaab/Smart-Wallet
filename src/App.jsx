@@ -1,5 +1,4 @@
 import React from "react";
-// import Navbar from "./components/Navbar";
 import Balance from "./components/Balance";
 import Categories from "./components/Categories";
 import History from "./components/History";
@@ -13,7 +12,6 @@ function App() {
   return (
     <Grommet>
       <Header />
-      {/* <Navbar /> */}
       <Pet />
       <Balance />
       <Categories />
