@@ -28,18 +28,81 @@ const addExpense = (amount) => {
 
 // Function to add income
 const addIncome = (amount) => {
+  // Adds the amount parameter to the current balance value
   setBalance(balance + amount);
+
+  // adds the amount parameter to the existing income array
   setIncome([...income, amount]);
 };
 
-// Calculate total expenses for the current month
+const [inputExpense, setInputExpense] = useState("");
+  const [inputIncome, setInputIncome] = useState("");
+
+  const handleExpenseInputChange = (e) => {
+    setInputExpense(e.target.value);
+  };
+
+  const handleIncomeInputChange = (e) => {
+    setInputIncome(e.target.value);
+  };
+
+  const handleAddExpense = () => {
+    const expenseAmount = parseInt(inputExpense);
+    if (!isNaN(expenseAmount)) {
+      addExpense(expenseAmount);
+      setInputExpense("");
+    }
+  };
+
+  // This is a function to handle user income
+  const handleAddIncome = () => {
+    const incomeAmount = parseInt(inputIncome);
+    if (!isNaN(incomeAmount)) {
+      addIncome(incomeAmount);
+      setInputIncome("");
+    }
+  };
+
+ // Calculate total expenses for the current month
 const totalExpensesThisMonth = expenses.reduce(
+  // this is a callback function that takes two parameters, total and expense. It adds the expenses
+  // The 0 is the initial value for the total parameter
   (total, expense) => total + expense,
   0
 );
+  return (
+    <section className="balance-section">
+      <h2>Balance: ${balance}</h2>
+      <div>
+        <input
+        // type accepts numerical values only
+          type="number"
+          // the value displays whatever is in the inputExpense state variable
+          value={inputExpense}
+          // the event handler 'handleExpenseInputChange' is called anytime the input value changes
+          onChange={handleExpenseInputChange}
+          // A placeholder showing the string below
+          placeholder="Enter expense amount"
+        />
+        <button onClick={handleAddExpense}>Add Expense</button>
 
-  
+        <input
+          type="number"
+          value={inputIncome}
+          onChange={handleIncomeInputChange}
+          placeholder="Enter income amount"
+        />
+        {/* Add income button attached to an event listener handleIncome */}
+        <button onClick={handleAddIncome}>Add Income</button>
+      </div>
+      <div>
+        {/* This displays the total expenses for the whole mount combined */}
+        <h3>Expenses This Month: ${totalExpensesThisMonth}</h3>
+      </div>
+    </section>
+  );
 }
+
 
 export default Balance;
 
