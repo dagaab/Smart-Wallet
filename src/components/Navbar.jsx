@@ -10,7 +10,7 @@ const items = [
 ];
 
 const Navbar = () => (
-  <Box direction="row" gap="medium">
+  <Box direction="row" gap="large">
     {items.map(item => (
       <Button hoverIndicator icon={item.icon} onClick={item.onClick} key={item.label} />
     ))}
@@ -24,11 +24,11 @@ const Header = () => (
   </GrommetHeader>
 );
 
-const App = () => (
-  <Grommet>
-    <Header />
-    {/* Rest of your app goes here */}
-  </Grommet>
-);
+// const Nav = () => (
+//   <Grommet>
+//     <Header />
+//     {/* Rest of your app goes here */}
+//   </Grommet>
+// );
 
-export default App;
+export default Header;
