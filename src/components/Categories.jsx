@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Grommet, Box, Button, Text, TextInput } from 'grommet';
 import { Home, CoatCheck, Cart, Car, Restaurant, Yoga } from 'grommet-icons';
-import categoriesBacgraund from "../components/Images/piggy-bank.jpg"
+
 
 
 const categories = [
