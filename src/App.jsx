@@ -4,6 +4,7 @@ import './App.css'
 import Nav from "./components/Navbar";
 import { Grommet } from 'grommet';
 import Grid from "./components/Grid";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Nav />
       <Pet />
       <Grid />
+      <Footer />
     </Grommet>
   );
 }
