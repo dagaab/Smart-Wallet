@@ -49,7 +49,7 @@ const Categories = () => {
     }
     setSpending((prevSpending) => ({
       ...prevSpending,
-      [category]:(prevSpending[category] + Number(inputValues[category])).toFixed(2),
+      [category]: (parseFloat(prevSpending[category]) + Number(inputValues[category])).toFixed(2),
     }));
     setInputValues((prevValues) => ({
       ...prevValues,
@@ -68,7 +68,7 @@ const Categories = () => {
 
   return (
     <Grommet>
-      <Box align="center" pad="medium" gap="large" background="black">
+      <Box align="center" pad="medium" gap="medium" background="black">
         {categories.map((item) => (
           <Box key={item.label} gap="xxsmall" align="center">
             <Button icon={item.icon} label={item.label} onClick={() => handleSpend(item.label)} />
@@ -77,11 +77,11 @@ const Categories = () => {
               onChange={(event) => handleInputChange(item.label, event)}
               placeholder={`Enter amount for ${item.label}`}
             />
-            <Text>{`Spent on ${item.label}:£ ${spending[item.label]}`}</Text>
+            {/* <Text>{`Spent on ${item.label}:£ ${spending[item.label]}`}</Text> */}
             {error && <Text color="status-critical">{error}</Text>}
           </Box>
         ))}
-      <Text>{`Total spending: ${totalSpending}`}</Text>
+      {/* <Text>{`Total spending: ${totalSpending}`}</Text> */}
       </Box>
     </Grommet>
   );

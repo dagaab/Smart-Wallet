@@ -24,11 +24,4 @@ const Header = () => (
   </GrommetHeader>
 );
 
-// const Nav = () => (
-//   <Grommet>
-//     <Header />
-//     {/* Rest of your app goes here */}
-//   </Grommet>
-// );
-
 export default Header;
