@@ -127,7 +127,7 @@ const getGif = () => {
   return (
     <section className="balance-section">
       <div>
-        <img src={getGif()} alt="Balance" class="gif" />
+        <img src={getGif()} alt="Balance" className="gif" />
       </div>
       <h2>Balance: ${balance}</h2>
       <div>
