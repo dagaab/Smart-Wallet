@@ -89,39 +89,39 @@ const totalExpensesThisMonth = expenses.reduce(
 // a code for changing the gif based on balance:
 const getGif = () => {
   if (balance >= 1600) {
-    return "src/assets/gifs/star.gif";
+    return "public/gifs/star.gif";
   } else if (balance >= 1500) {
-    return "src/assets/gifs/yeah.gif";
+    return "public/gifs/yeah.gif";
   } else if (balance >= 1400) {
-    return "src/assets/gifs/heart.gif";
+    return "public/gifs/heart.gif";
   } else if (balance >= 1300) {
-    return "src/assets/gifs/laugh.gif";
+    return "public/gifs/laugh.gif";
   } else if (balance >= 1100) {
-    return "src/assets/gifs/thanks.gif";
+    return "public/gifs/thanks.gif";
   } else if (balance >= 1000) {
-    return "src/assets/gifs/nice.gif";
+    return "public/gifs/nice.gif";
   } else if (balance >= 900) {
-    return "src/assets/gifs/giphy.gif";
+    return "public/gifs/giphy.gif";
   } else if (balance >= 800) {
     return "src/assets/gifs/shocked.gif";
   } else if (balance >= 700) {
-    return "src/assets/gifs/angry.gif";
+    return "public/gifs/angry.gif";
   } else if (balance >= 600) {
-    return "src/assets/gifs/no.gif";
+    return "public/gifs/no.gif";
   } else if (balance >= 500) {
-    return "src/assets/gifs/sad.gif";
+    return "public/gifs/sad.gif";
   } else if (balance >= 400) {
-    return "src/assets/gifs/crying.gif";
+    return "public/gifs/crying.gif";
   } else if (balance >= 300) {
-    return "src/assets/gifs/sweating.gif";
+    return "public/gifs/sweating.gif";
   } else if (balance >= 600) {
-    return "src/assets/gifs/wallet.gif";
+    return "public/gifs/wallet.gif";
   } else if (balance >= 200) {
-    return "src/assets/gifs/cold.gif";
+    return "public/gifs/cold.gif";
   } else if (balance >= 100) {
-    return "src/assets/gifs/sick.gif";
+    return "public/gifs/sick.gif";
   } else if (balance >= 0) {
-    return "src/assets/gifs/heaven.gif";
+    return "public/gifs/heaven.gif";
   }
 };
   return (
