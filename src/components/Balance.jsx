@@ -35,30 +35,45 @@ const addIncome = (amount) => {
   setIncome([...income, amount]);
 };
 
+// This state variable inputExpense useState starts off as an empty string, the setInputExpense updates the inputExpense variable anytime a new value is added to the array
 const [inputExpense, setInputExpense] = useState("");
+// A similar thing to the inputExpense is taking place for InputIncome
   const [inputIncome, setInputIncome] = useState("");
-
+// the function handleExpenseInputChange takes an event object e, it represents the event object generated when an input element's value changes
   const handleExpenseInputChange = (e) => {
+    // the e.target contains information that triggered the event and the value property contains the current vlaue of the input field
+    // the setInputExpense updates the value of the inputExpense to match what was written in the input field
     setInputExpense(e.target.value);
   };
 
+  // The function handleIncomeInputChange behaves in a similar way to the handleExpenseInputChange
   const handleIncomeInputChange = (e) => {
+    // the setInputIncome updates the value of the inputIncome to match the new value written in the input field
     setInputIncome(e.target.value);
   };
 
+// This is a function to handle user expense
   const handleAddExpense = () => {
+    // Parses the value of inputExpense to an integer
     const expenseAmount = parseInt(inputExpense);
+    // An if statement to check if the parsed expense amount is a valid number
     if (!isNaN(expenseAmount)) {
+      // if it is a valid number is adds the expense amount to the expense state using the addExpense function
       addExpense(expenseAmount);
+      // Once the expense amount has been added it clears the inputExpense state variable
       setInputExpense("");
     }
   };
 
   // This is a function to handle user income
   const handleAddIncome = () => {
+    // Parses the value of inputIncome to an integer
     const incomeAmount = parseInt(inputIncome);
+    // An if statement to check if the parsed income amount is a valid number
     if (!isNaN(incomeAmount)) {
+      // if it is a valid number is adds the income amount to the income state using the addIncome function
       addIncome(incomeAmount);
+      // Once the income amount has been added it clears the inputIncome state variable
       setInputIncome("");
     }
   };
