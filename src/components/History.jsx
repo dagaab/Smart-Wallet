@@ -29,7 +29,7 @@ function History() {
         ))}
       </Box>
       <Box align="center" pad="large">
-        Our meter pie is emptie you need to feel it!
+      Our pie is empty, you have to fill it by spending monthly!
         <Meter
           type="pie"
           background="light-2"
@@ -37,7 +37,7 @@ function History() {
           values={meterValues}
         />
         <Box direction="row" border={{ color: 'black', size: 'medium' }} pad="large" >
-          Here ti well be our data!
+        Monthly expenses are displayed here!
           {monthlySpending.map((spending, index) => (
           <Text key={index}>Month {index + 1}: {spending}</Text>
         ))}
