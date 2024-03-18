@@ -85,8 +85,50 @@ const totalExpensesThisMonth = expenses.reduce(
   (total, expense) => total + expense,
   0
 );
+
+// a code for changing the gif based on balance:
+const getGif = () => {
+  if (balance >= 1600) {
+    return "src/assets/gifs/star.gif";
+  } else if (balance >= 1500) {
+    return "src/assets/gifs/yeah.gif";
+  } else if (balance >= 1400) {
+    return "src/assets/gifs/heart.gif";
+  } else if (balance >= 1300) {
+    return "src/assets/gifs/laugh.gif";
+  } else if (balance >= 1100) {
+    return "src/assets/gifs/thanks.gif";
+  } else if (balance >= 1000) {
+    return "src/assets/gifs/nice.gif";
+  } else if (balance >= 900) {
+    return "src/assets/gifs/giphy.gif";
+  } else if (balance >= 800) {
+    return "src/assets/gifs/shocked.gif";
+  } else if (balance >= 700) {
+    return "src/assets/gifs/angry.gif";
+  } else if (balance >= 600) {
+    return "src/assets/gifs/no.gif";
+  } else if (balance >= 500) {
+    return "src/assets/gifs/sad.gif";
+  } else if (balance >= 400) {
+    return "src/assets/gifs/crying.gif";
+  } else if (balance >= 300) {
+    return "src/assets/gifs/sweating.gif";
+  } else if (balance >= 600) {
+    return "src/assets/gifs/wallet.gif";
+  } else if (balance >= 200) {
+    return "src/assets/gifs/cold.gif";
+  } else if (balance >= 100) {
+    return "src/assets/gifs/sick.gif";
+  } else if (balance >= 0) {
+    return "src/assets/gifs/heaven.gif";
+  }
+};
   return (
     <section className="balance-section">
+      <div>
+        <img src={getGif()} alt="Balance" class="gif" />
+      </div>
       <h2>Balance: ${balance}</h2>
       <div>
         <input
