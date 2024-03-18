@@ -141,7 +141,7 @@ const Categories = () => {
     }
     setSpending((prevSpending) => ({
       ...prevSpending,
-      [category]:(prevSpending[category] + Number(inputValues[category])).toFixed(2),
+      [category]: (parseFloat(prevSpending[category]) + Number(inputValues[category])).toFixed(2),
     }));
     setInputValues((prevValues) => ({
       ...prevValues,
