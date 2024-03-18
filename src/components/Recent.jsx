@@ -1,5 +1,8 @@
 import React from "react";
 import "../styles/Recent.css";
+import Categories from './Categories'; 
+
+console.log(Categories);
 
 // By importing the Section.css file, it is added to the DOM whenever this component loads
 function Recent() {
