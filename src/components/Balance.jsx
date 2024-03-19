@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from 'react';
+import { useEffect } from "react";
 import "../styles/Balance.css";
 
-// By importing the Section.css file, it is added to the DOM whenever this component loads
+
 function Balance() {
 
 // State variables for balance, expenses, and income
@@ -16,6 +17,21 @@ const [expenses, setExpenses] = useState([]);
 
 // The same logic for expenses applies here
 const [income, setIncome] = useState([]);
+
+// Load income and expenses from local storage
+useEffect(() => {
+  const storedIncome = JSON.parse(localStorage.getItem("income")) || [];
+  const storedExpenses = JSON.parse(localStorage.getItem("expenses")) || [];
+  setIncome(storedIncome);
+  setExpenses(storedExpenses);
+}, []);
+
+// Save income and expenses to local storage whenever they change
+useEffect(() => {
+  localStorage.setItem("income", JSON.stringify(income));
+  localStorage.setItem("expenses", JSON.stringify(expenses));
+}, [income, expenses]);
+
 
 // Function to add expense
 const addExpense = (amount) => {
