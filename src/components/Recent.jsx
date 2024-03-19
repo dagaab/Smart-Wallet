@@ -5,12 +5,15 @@ const Recent = () => {
   const [view, setView] = useState('select');
   const [spending, setSpending] = useState({});
   const [totalSpending, setTotalSpending] = useState(0);
-
+  const [monthlySpending, setMonthlySpending] = useState(
+    JSON.parse(localStorage.getItem('monthlySpending')) || []
+  );
   useEffect(() => {
     const spendingData = JSON.parse(localStorage.getItem('spending'));
     setSpending(spendingData);
     const totalSpendingData = JSON.parse(localStorage.getItem('totalSpending'));
     setTotalSpending(totalSpendingData);
+    localStorage.setItem('monthlySpending', JSON.stringify(monthlySpending));
   }, []);
 
   // Calculate the percentages for the meter
@@ -39,6 +42,9 @@ const Recent = () => {
 
           <Box direction="row" border={{ color: 'black', size: 'medium' }}>
             Total Spending: {totalSpending}
+          </Box>
+          <Box direction="row" border={{ color: 'black', size: 'medium' }}>
+            Mounthly Spending: {monthlySpending}
           </Box>
           <Box align="center" pad="large">
             <Meter

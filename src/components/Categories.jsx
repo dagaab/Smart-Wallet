@@ -35,6 +35,30 @@ const Categories = () => {
   });
 
   useEffect(() => {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    // Check if today is the last day of the month
+    if (today.getMonth() !== tomorrow.getMonth()) {
+      // Reset spending and totalSpending
+      setSpending({
+        Home: 0,
+        Wardrobe: 0,
+        Groceries: 0,
+        Auto: 0,
+        Restaurant: 0,
+        Gym: 0,
+      });
+      localStorage.setItem('spending', JSON.stringify(spending));
+      localStorage.setItem('totalSpending', '0');
+    }
+
+    localStorage.setItem('monthlySpending', JSON.stringify(monthlySpending));
+  }, [spending, monthlySpending]);
+
+
+  useEffect(() => {
     localStorage.setItem('spending', JSON.stringify(spending));
     const totalSpending = Object.values(spending).reduce((a, b) => a + Number(b), 0).toFixed(2);
     localStorage.setItem('totalSpending', totalSpending);
@@ -83,6 +107,7 @@ const Categories = () => {
           </Box>
         ))}
         <Text>{`Total spending: ${totalSpending}`}</Text>
+        <Text>{`Montly spending: ${monthlySpending}`}</Text>
       </Box>
     </Grommet>
   );
