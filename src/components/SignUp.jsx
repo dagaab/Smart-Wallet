@@ -63,7 +63,7 @@ import {
         <Heading level={2} margin="none">
           Sign Up
         </Heading>
-        <Text>For a Amart-Wallet account</Text>
+        <Text>to Saving Gotchi</Text>
       </Header>
       <Box
         // Padding used to prevent focus from being cutoff

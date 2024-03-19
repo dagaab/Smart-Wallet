@@ -48,10 +48,11 @@ function History() {
         <Box align="center" pad="large">
           <SignUp />
         </Box>
+        <Box align="center" pad="large">
+          <SignIn />
+        </Box>
       </Box>
-      <Box>
-        <SignIn />
-      </Box>
+      
     </Grommet>
   );
 }
