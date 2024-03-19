@@ -18,8 +18,8 @@ const Navbar = () => (
 );
 
 const Header = () => (
-  <GrommetHeader background="brand" pad="xsmall">
-    <Heading level="4">Saving Gotchi</Heading>
+  <GrommetHeader background="rgb(16,25,53)" pad="xsmall">
+    <Heading color="rgb(242,253,255)" level="4">Saving Gotchi</Heading>
     <Navbar />
   </GrommetHeader>
 );

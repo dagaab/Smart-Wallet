@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Grommet, Box, Button, Text, TextInput } from 'grommet';
 import { Home, CoatCheck, Cart, Car, Restaurant, Yoga } from 'grommet-icons';
@@ -70,7 +69,7 @@ const Categories = () => {
 
   return (
     <Grommet>
-      <Box align="center" pad="medium" gap="large" background="black">
+      <Box align="center" pad="medium" gap="large">
         {categories.map((item) => (
           <Box key={item.label} gap="xxsmall" align="center">
             <Button icon={item.icon} label={item.label} onClick={() => handleSpend(item.label)} />
