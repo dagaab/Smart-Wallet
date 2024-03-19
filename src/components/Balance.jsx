@@ -117,7 +117,7 @@ const getGif = () => {
   } else if (balance >= 600) {
     return "/gifs/wallet.gif";
   } else if (balance >= 200) {
-    return "public/gifs/cold.gif";
+    return "/gifs/cold.gif";
   } else if (balance >= 100) {
     return "/gifs/sick.gif";
   } else if (balance >= 0) {
