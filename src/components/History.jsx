@@ -1,17 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import "../styles/History.css";
+import { Grommet, Box, Text, Meter } from 'grommet';
 
-// By importing the Section.css file, it is added to the DOM whenever this component loads
 function History() {
+  const [monthlySpending, setMonthlySpending] = useState([]);
+
+  useEffect(() => {
+    const monthlySpendingData = JSON.parse(localStorage.getItem('monthlySpending'));
+    if (monthlySpendingData) {
+      setMonthlySpending(monthlySpendingData);
+    }
+  }, []);
+
+  // Calculate the total spending
+  const totalSpending = monthlySpending.reduce((a, b) => a + b, 0);
+
+  // Calculate the percentages for the Meter
+  const meterValues = monthlySpending.map((spending, index) => ({
+    label: `Month ${index + 1}`,
+    value: (spending / totalSpending) * 100,
+  }));
+
   return (
-    <section className="history-section">
-      <h2>History</h2>
-      <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-        architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem 
-      </p>
-    </section>
+    <Grommet>
+      <Box>
+        {monthlySpending.map((spending, index) => (
+          <Text key={index}>Month {index + 1}: {spending}</Text>
+        ))}
+      </Box>
+      <Box align="center" pad="large">
+      Our pie is empty, you have to fill it by spending monthly!
+        <Meter
+          type="pie"
+          background="light-2"
+          size="small"
+          values={meterValues}
+        />
+        <Box direction="row" border={{ color: 'black', size: 'medium' }} pad="large" >
+        Monthly expenses are displayed here!
+          {monthlySpending.map((spending, index) => (
+          <Text key={index}>Month {index + 1}: {spending}</Text>
+        ))}
+        </Box>
+      </Box>
+    </Grommet>
   );
 }
 

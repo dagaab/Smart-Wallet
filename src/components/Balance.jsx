@@ -85,8 +85,50 @@ const totalExpensesThisMonth = expenses.reduce(
   (total, expense) => total + expense,
   0
 );
+
+// a code for changing the gif based on balance:
+const getGif = () => {
+  if (balance >= 1600) {
+    return "public/gifs/star.gif";
+  } else if (balance >= 1500) {
+    return "public/gifs/yeah.gif";
+  } else if (balance >= 1400) {
+    return "public/gifs/heart.gif";
+  } else if (balance >= 1300) {
+    return "public/gifs/laugh.gif";
+  } else if (balance >= 1100) {
+    return "public/gifs/thanks.gif";
+  } else if (balance >= 1000) {
+    return "public/gifs/nice.gif";
+  } else if (balance >= 900) {
+    return "public/gifs/giphy.gif";
+  } else if (balance >= 800) {
+    return "src/assets/gifs/shocked.gif";
+  } else if (balance >= 700) {
+    return "public/gifs/angry.gif";
+  } else if (balance >= 600) {
+    return "public/gifs/no.gif";
+  } else if (balance >= 500) {
+    return "public/gifs/sad.gif";
+  } else if (balance >= 400) {
+    return "public/gifs/crying.gif";
+  } else if (balance >= 300) {
+    return "public/gifs/sweating.gif";
+  } else if (balance >= 600) {
+    return "public/gifs/wallet.gif";
+  } else if (balance >= 200) {
+    return "public/gifs/cold.gif";
+  } else if (balance >= 100) {
+    return "public/gifs/sick.gif";
+  } else if (balance >= 0) {
+    return "public/gifs/heaven.gif";
+  }
+};
   return (
     <section className="balance-section">
+      <div>
+        <img src={getGif()} alt="Balance" className="gif" />
+      </div>
       <h2>Balance: ${balance}</h2>
       <div>
         <input

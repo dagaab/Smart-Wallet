@@ -54,3 +54,10 @@
   margin-bottom: 10px;
   color: #333;
 }
+
+.gif {
+  border: 10px solid rgb(154, 224, 165);
+  border-radius: 260px;
+  max-width: 300px;
+  min-width: 300px;
+}

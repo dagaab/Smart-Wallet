@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Grommet, Box, Button, Text, TextInput } from 'grommet';
 import { Home, CoatCheck, Cart, Car, Restaurant, Yoga } from 'grommet-icons';
 
-
-
 const categories = [
   { label: 'Home', icon: <Home /> },
   { label: 'Wardrobe', icon: <CoatCheck /> },
@@ -25,6 +23,9 @@ const Categories = () => {
       Gym: 0,
     }
   );
+  const [monthlySpending, setMonthlySpending] = useState(
+    JSON.parse(localStorage.getItem('monthlySpending')) || []
+  );
   const [inputValues, setInputValues] = useState({
     Home: '',
     Wardrobe: '',
@@ -38,7 +39,8 @@ const Categories = () => {
     localStorage.setItem('spending', JSON.stringify(spending));
     const totalSpending = Object.values(spending).reduce((a, b) => a + Number(b), 0).toFixed(2);
     localStorage.setItem('totalSpending', totalSpending);
-  }, [spending]);
+    localStorage.setItem('monthlySpending', JSON.stringify(monthlySpending));
+  }, [spending, monthlySpending]);
 
   const [error, setError] = useState('');
 
@@ -68,7 +70,7 @@ const Categories = () => {
 
   return (
     <Grommet>
-      <Box align="center" pad="medium" gap="medium" background="black">
+      <Box align="center" pad="medium" gap="large" background="black">
         {categories.map((item) => (
           <Box key={item.label} gap="xxsmall" align="center">
             <Button icon={item.icon} label={item.label} onClick={() => handleSpend(item.label)} />
@@ -81,7 +83,7 @@ const Categories = () => {
             {error && <Text color="status-critical">{error}</Text>}
           </Box>
         ))}
-      {/* <Text>{`Total spending: ${totalSpending}`}</Text> */}
+        <Text>{`Total spending: ${totalSpending}`}</Text>
       </Box>
     </Grommet>
   );
