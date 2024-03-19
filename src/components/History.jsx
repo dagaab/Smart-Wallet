@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/History.css";
 import { Grommet, Box, Text, Meter } from 'grommet';
+import SignIn from "./SignIn";
 
 function History() {
   const [monthlySpending, setMonthlySpending] = useState([]);
@@ -42,6 +43,9 @@ function History() {
           <Text key={index}>Month {index + 1}: {spending}</Text>
         ))}
         </Box>
+      </Box>
+      <Box>
+        <SignIn />
       </Box>
     </Grommet>
   );

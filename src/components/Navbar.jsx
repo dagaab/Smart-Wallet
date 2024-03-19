@@ -19,7 +19,7 @@ const Navbar = () => (
 
 const Header = () => (
   <GrommetHeader background="brand" pad="xsmall">
-    <Heading level="4">My App</Heading>
+    <Heading level="4">Saving Gotchi</Heading>
     <Navbar />
   </GrommetHeader>
 );
