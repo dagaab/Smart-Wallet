@@ -1,12 +1,13 @@
 
 import React from 'react';
+import "../styles/Navbar.css"
 import { Grommet, Header as GrommetHeader, Heading,  Menu, Box, Button } from 'grommet';
 import { Home, User, Contact } from 'grommet-icons';
 
 const items = [
-  { label: 'Home', onClick: () => {}, icon: <Home /> },
-  { label: 'About', onClick: () => {}, icon: <User /> },
-  { label: 'Contact', onClick: () => {}, icon: <Contact /> },
+  { label: 'Home', onClick: () => {}, icon: <Home color="rgb(242,253,255)"/> },
+  { label: 'About', onClick: () => {}, icon: <User color="rgb(242,253,255)"/> },
+  { label: 'Contact', onClick: () => {}, icon: <Contact color="rgb(242,253,255)"/> },
 ];
 
 const Navbar = () => (
@@ -18,10 +19,12 @@ const Navbar = () => (
 );
 
 const Header = () => (
-  <GrommetHeader background="rgb(16,25,53)" pad="xsmall">
-    <Heading color="rgb(242,253,255)" level="4">Saving Gotchi</Heading>
+  <section className="navbar">
+  <GrommetHeader pad="xsmall">
+    <Heading level="4">Saving Gotchi</Heading>
     <Navbar />
   </GrommetHeader>
+  </section>
 );
 
 export default Header;

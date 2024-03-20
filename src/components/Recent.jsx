@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "../styles/Recent.css";
 import { Grommet, Box, Button, Meter } from 'grommet';
 
 const Recent = () => {
@@ -28,7 +29,7 @@ const Recent = () => {
         <Box>
           <Button onClick={() => setView('select')}>Hide Recent Spending</Button>
           {spending && (
-      <Box direction="column" border={{ color: 'black', size: 'medium' }} pad="small">
+      <Box direction="column" pad="small">
         {Object.entries(spending).map(([category, amount], index) => (
         <Box key={index}>
               {category}: {amount}
@@ -37,7 +38,7 @@ const Recent = () => {
   </Box>
 )}
 
-          <Box direction="row" border={{ color: 'black', size: 'medium' }}>
+          <Box direction="row">
             Total Spending: {totalSpending}
           </Box>
           <Box align="center" pad="large">
