@@ -95,10 +95,10 @@ const Categories = () => {
   return (
     <section className='categories'>
     <Grommet>
-      <Box align="center" pad="medium" gap="large">
+      <Box align="center" pad="small" gap="medium">
         {categories.map((item) => (
           <Box key={item.label} gap="xxsmall" align="center">
-            <Button icon={item.icon} label={item.label} onClick={() => handleSpend(item.label)} />
+            <Button primary icon={item.icon} label={item.label} color={"rgb(0,71,119)"} onClick={() => handleSpend(item.label)} />
             <TextInput
               value={inputValues[item.label]}
               onChange={(event) => handleInputChange(item.label, event)}

@@ -26,12 +26,12 @@ const Recent = () => {
   return (
     <section className='recent'>
     <Grommet>
-      <Box>
-        <Button onClick={() => setView('selected')}>Show Recent Spending</Button>
+      <Box pad="small">
+        <Button primary label="Show Recent Spending" color={"rgb(0,71,119)"} onClick={() => setView('selected')}/>
       </Box>
       {view === 'selected' && (
-        <Box>
-          <Button onClick={() => setView('select')}>Hide Recent Spending</Button>
+        <Box pad="small">
+          <Button secondary label="Hide Recent Spending" color={"rgb(0,71,119)"}  onClick={() => setView('select')}/>
           {spending && (
       <Box direction="column" pad="small">
         {Object.entries(spending).map(([category, amount], index) => (
@@ -45,8 +45,8 @@ const Recent = () => {
           <Box direction="row">
             Total Spending: {totalSpending}
           </Box>
-          <Box direction="row" border={{ color: 'black', size: 'medium' }}>
-            Mounthly Spending: {monthlySpending}
+          <Box direction="row" >
+            Monthly Spending: {monthlySpending}
           </Box>
           <Box align="center" pad="large">
             <Meter
