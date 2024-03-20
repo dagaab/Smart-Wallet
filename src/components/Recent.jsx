@@ -21,6 +21,7 @@ const Recent = () => {
   }));
 
   return (
+    <section className='recent'>
     <Grommet>
       <Box>
         <Button onClick={() => setView('selected')}>Show Recent Spending</Button>
@@ -52,6 +53,7 @@ const Recent = () => {
         </Box>
       )}
     </Grommet>
+    </section>
   );
 };
 

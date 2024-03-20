@@ -22,6 +22,7 @@ function History() {
   }));
 
   return (
+    <section className='history'>
     <Grommet>
       <Box>
         {monthlySpending.map((spending, index) => (
@@ -44,6 +45,7 @@ function History() {
         </Box>
       </Box>
     </Grommet>
+    </section>
   );
 }
 

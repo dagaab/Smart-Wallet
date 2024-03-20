@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "../styles/Categories.css"
 import { Grommet, Box, Button, Text, TextInput } from 'grommet';
 import { Home, CoatCheck, Cart, Car, Restaurant, Yoga } from 'grommet-icons';
 
@@ -68,6 +69,7 @@ const Categories = () => {
   const totalSpending = Object.values(spending).reduce((a, b) => a + Number(b), 0).toFixed(2);
 
   return (
+    <section className='categories'>
     <Grommet>
       <Box align="center" pad="medium" gap="large">
         {categories.map((item) => (
@@ -85,6 +87,7 @@ const Categories = () => {
         <Text>{`Total spending: ${totalSpending}`}</Text>
       </Box>
     </Grommet>
+    </section>
   );
 };
 
