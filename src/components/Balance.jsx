@@ -19,7 +19,7 @@ const [income, setIncome] = useState([]);
 useEffect(() => {
   const storedIncome = JSON.parse(localStorage.getItem("income")) || [];
   setIncome(storedIncome);
-}, []);
+}, [income]);
 
 // Save income and expenses to local storage whenever they change
 useEffect(() => {
@@ -60,42 +60,46 @@ const addIncome = (amount) => {
     }
   };
 
+// get the total expenses from the localStorage
+const totalExpensesThisMonth = localStorage.getItem('totalSpending');
+
+const updatedBalance = balance - totalExpensesThisMonth;
 
 // a code for changing the gif based on balance:
 const getGif = () => {
-  if (balance >= 1500) {
+  if (updatedBalance >= 1500) {
     return "/gifs/star.gif";
-  } else if (balance >= 1400) {
+  } else if (updatedBalance >= 1400) {
     return "/gifs/yeah.gif";
-  } else if (balance >= 1300) {
+  } else if (updatedBalance >= 1300) {
     return "/gifs/heart.gif";
-  } else if (balance >= 1200) {
+  } else if (updatedBalance >= 1200) {
     return "/gifs/laugh.gif";
-  } else if (balance >= 1100) {
+  } else if (updatedBalance >= 1100) {
     return "/gifs/thanks.gif";
-  } else if (balance >= 1000) {
+  } else if (updatedBalance >= 1000) {
     return "/gifs/nice.gif";
-  } else if (balance >= 900) {
+  } else if (updatedBalance >= 900) {
     return "/gifs/giphy.gif";
-  } else if (balance >= 800) {
+  } else if (updatedBalance >= 800) {
     return "/gifs/shocked.gif";
-  } else if (balance >= 700) {
+  } else if (updatedBalance >= 700) {
     return "/gifs/angry.gif";
-  } else if (balance >= 600) {
+  } else if (updatedBalance >= 600) {
     return "/gifs/no.gif";
-  } else if (balance >= 500) {
+  } else if (updatedBalance >= 500) {
     return "/gifs/sad.gif";
-  } else if (balance >= 400) {
+  } else if (updatedBalance >= 400) {
     return "/gifs/crying.gif";
-  } else if (balance >= 300) {
+  } else if (updatedBalance >= 300) {
     return "/gifs/sweating.gif";
-  } else if (balance >= 200) {
+  } else if (updatedBalance >= 200) {
     return "/gifs/wallet.gif";
-  } else if (balance >= 100) {
+  } else if (updatedBalance >= 100) {
     return "/gifs/cold.gif";
-  } else if (balance > 0) {
+  } else if (updatedBalance > 0) {
     return "/gifs/sick.gif";
-  } else if (balance <= 0) {
+  } else if (updatedBalance <= 0) {
     return "/gifs/heaven.gif";
   }
 };
@@ -104,7 +108,7 @@ const getGif = () => {
       <div>
         <img src={getGif()} alt="Balance" className="gif" />
       </div>
-      <h2>Balance: ${balance}</h2>
+      <h2>Balance: ${updatedBalance}</h2>
       <div>
         <input
           type="number"
