@@ -23,8 +23,11 @@
 .balance-section button {
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
-  background-color: #3498db;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background-color: rgb(0,71,119);
   color: #fff;
   font-size: 16px;
   cursor: pointer;
