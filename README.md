@@ -10,7 +10,7 @@ The application tracks the user's expenses, allowing them to input any income th
 put link here
 
 ## Screenshot
-put screenshit here
+![alt text](image.png)
 
 ## Contributors
 * [Dagmara Abramowicz](https://github.com/dagaab)
