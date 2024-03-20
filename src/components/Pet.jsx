@@ -5,10 +5,6 @@ import "../styles/Pet.css";
 function Pet() {
   return (
     <section className="pet-section">
-      <h2>PET</h2>
-      <p>
-       ()o.o()
-      </p>
     </section>
   );
 }

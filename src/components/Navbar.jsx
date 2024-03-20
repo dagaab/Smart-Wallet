@@ -1,31 +1,17 @@
-// import React from "react";
-// import "../styles/Navbar.css";
-
-
-// function Navbar() {
-//   return (
-//     <nav className="navbar">
-//       <a href="/">Navbar</a>
-//     </nav>
-//   );
-// }
-
-// export default Navbar;
-
-
 
 import React from 'react';
+import "../styles/Navbar.css"
 import { Grommet, Header as GrommetHeader, Heading,  Menu, Box, Button } from 'grommet';
 import { Home, User, Contact } from 'grommet-icons';
 
 const items = [
-  { label: 'Home', onClick: () => {}, icon: <Home /> },
-  { label: 'About', onClick: () => {}, icon: <User /> },
-  { label: 'Contact', onClick: () => {}, icon: <Contact /> },
+  { label: 'Home', onClick: () => {}, icon: <Home color="rgb(242,253,255)"/> },
+  { label: 'About', onClick: () => {}, icon: <User color="rgb(242,253,255)"/> },
+  { label: 'Contact', onClick: () => {}, icon: <Contact color="rgb(242,253,255)"/> },
 ];
 
 const Navbar = () => (
-  <Box direction="row" gap="medium">
+  <Box direction="row" gap="large">
     {items.map(item => (
       <Button hoverIndicator icon={item.icon} onClick={item.onClick} key={item.label} />
     ))}
@@ -33,17 +19,12 @@ const Navbar = () => (
 );
 
 const Header = () => (
-  <GrommetHeader background="brand" pad="xsmall">
-    <Heading level="4">My App</Heading>
+  <section className="navbar">
+  <GrommetHeader pad="xsmall">
+    <Heading level="4">Saving Gotchi</Heading>
     <Navbar />
   </GrommetHeader>
+  </section>
 );
 
-const App = () => (
-  <Grommet>
-    <Header />
-    {/* Rest of your app goes here */}
-  </Grommet>
-);
-
-export default App;
+export default Header;
