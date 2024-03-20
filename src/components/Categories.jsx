@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "../styles/Categories.css"
 import { Grommet, Box, Button, Text, TextInput } from 'grommet';
 import { Home, CoatCheck, Cart, Car, Restaurant, Yoga } from 'grommet-icons';
 
@@ -92,11 +93,12 @@ const Categories = () => {
   const totalSpending = Object.values(spending).reduce((a, b) => a + Number(b), 0).toFixed(2);
 
   return (
+    <section className='categories'>
     <Grommet>
-      <Box align="center" pad="medium" gap="large" background="black">
+      <Box align="center" pad="small" gap="medium">
         {categories.map((item) => (
           <Box key={item.label} gap="xxsmall" align="center">
-            <Button icon={item.icon} label={item.label} onClick={() => handleSpend(item.label)} />
+            <Button primary icon={item.icon} label={item.label} color={"rgb(0,71,119)"} onClick={() => handleSpend(item.label)} />
             <TextInput
               value={inputValues[item.label]}
               onChange={(event) => handleInputChange(item.label, event)}
@@ -110,6 +112,7 @@ const Categories = () => {
         <Text>{`Montly spending: ${monthlySpending}`}</Text>
       </Box>
     </Grommet>
+    </section>
   );
 };
 

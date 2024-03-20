@@ -25,6 +25,7 @@ function History() {
   }));
 
   return (
+    <section className='history'>
     <Grommet>
       <Box>
         {monthlySpending.map((spending, index) => (
@@ -39,7 +40,7 @@ function History() {
           size="small"
           values={meterValues}
         />
-        <Box direction="row" border={{ color: 'black', size: 'medium' }} pad="large" >
+        <Box direction="row" pad="large" >
         Monthly expenses are displayed here!
           {monthlySpending.map((spending, index) => (
           <Text key={index}>Month {index + 1}: {spending}</Text>
@@ -54,6 +55,7 @@ function History() {
       </Box>
       
     </Grommet>
+    </section>
   );
 }
 
