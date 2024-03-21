@@ -15,7 +15,7 @@ const Recent = () => {
     const totalSpendingData = JSON.parse(localStorage.getItem('totalSpending'));
     setTotalSpending(totalSpendingData);
     localStorage.setItem('monthlySpending', JSON.stringify(monthlySpending));
-  }, []);
+  }, [spending]);
 
   // Calculate the percentages for the meter
   const meterValues = Object.entries(spending).map(([category, amount]) => ({
