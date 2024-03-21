@@ -16,6 +16,7 @@ import {
 } from 'grommet';
 import { Close, Next, CircleAlert } from 'grommet-icons';
 import { emailValidation } from './FormValidation';
+import { Link, NavLink } from 'react-router-dom';
 
 const ResetPassword = ({ closeLayer, email }) => {
   const [formValues, setFormValues] = React.useState({ resetEmail: email });
@@ -196,6 +197,19 @@ const SignIn = () => {
               />
             </Layer>
           )}
+        </Box>
+        <Box align="start" margin={{ top: 'medium', bottom: 'small' }}>
+        <NavLink
+          to="/grid"
+          className={({ isActive }) =>
+            isActive ? 'nav-link active' : 'nav-link'
+          }
+        >
+           For demonstration use the button!
+          <Box  background="black" border="2px">
+          Sign In
+          </Box>
+        </NavLink>
         </Box>
       </Box>
     </Box>

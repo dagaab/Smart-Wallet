@@ -104,7 +104,7 @@ const getGif = () => {
       <div>
         <img src={getGif()} alt="Balance" className="gif" />
       </div>
-      <h2>Balance: ${balance}</h2>
+      <h2>Balance: £{balance}</h2>
       <div>
         <input
           type="number"

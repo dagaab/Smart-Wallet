@@ -43,10 +43,10 @@ const Recent = () => {
 )}
 
           <Box direction="row">
-            Total Spending: {totalSpending}
+            Total Spending: £{totalSpending}
           </Box>
           <Box direction="row" >
-            Monthly Spending: {monthlySpending}
+            Monthly Spending: £{monthlySpending}
           </Box>
           <Box align="center" pad="large">
             <Meter

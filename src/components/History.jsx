@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/History.css";
 import { Grommet, Box, Text, Meter } from 'grommet';
-import SignUp from './SignUp';
-import SignIn from "./SignIn";
+import { Link, NavLink } from 'react-router-dom';
 
 
 function History() {
@@ -46,14 +45,20 @@ function History() {
           <Text key={index}>Month {index + 1}: {spending}</Text>
         ))}
         </Box>
-        <Box align="center" pad="large">
-          <SignUp />
-        </Box>
-        <Box align="center" pad="large">
-          <SignIn />
-        </Box>
       </Box>
-      
+      <div>
+        <NavLink
+          to="/SignIn"
+          className={({ isActive }) =>
+            isActive ? 'nav-link active' : 'nav-link'
+          }
+        >
+           For demonstration use the button!
+           <Box  background="black" border="2px">
+          Sign Out
+          </Box>
+        </NavLink>
+      </div>
     </Grommet>
     </section>
   );
