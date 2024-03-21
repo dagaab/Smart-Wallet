@@ -53,7 +53,7 @@ function History() {
             isActive ? 'nav-link active' : 'nav-link'
           }
         >
-           For demonstration use the button!
+           For demonstration use this button to Sign Out!
            <Box  background="black" border="2px">
           Sign Out
           </Box>
