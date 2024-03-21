@@ -108,8 +108,8 @@ const Categories = () => {
             {error && <Text color="status-critical">{error}</Text>}
           </Box>
         ))}
-        <Text>{`Total spending: ${totalSpending}`}</Text>
-        <Text>{`Montly spending: ${monthlySpending}`}</Text>
+        {/* <Text>{`Total spending: ${totalSpending}`}</Text> */}
+        {/* <Text>{`Montly spending: ${monthlySpending}`}</Text> */}
       </Box>
     </Grommet>
     </section>

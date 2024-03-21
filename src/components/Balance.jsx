@@ -108,6 +108,7 @@ const getGif = () => {
       <div>
         <img src={getGif()} alt="Balance" className="gif" />
       </div>
+      <h2>Balance: £{balance}</h2>
       <h2>Balance: ${updatedBalance}</h2>
       <div>
         <input
