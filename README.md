@@ -7,10 +7,10 @@ Smart Wallet is a web application that helps users budget their expenses in a fu
 The application tracks the user's expenses, allowing them to input any income they have coming in or add any money they may spend be it on bills, groceries, clothing, take out, entertainment, etc. It stores the user's inputs to showcases their most recent list of purchases, adding these purchases up in the categories section to showcase what the money is spent on in a graph. As the months goes by, the user can see the history of their spending/balance, allowing them to view their habits in the long-term across several months.
 
 ## Live
-put link here
+[Saving Gotchi](https://smart-pet-wallet.netlify.app/)
 
 ## Screenshot
-![alt text](image.png)
+![alt text](image-1.png)
 
 ## Contributors
 * [Dagmara Abramowicz](https://github.com/dagaab)
@@ -18,5 +18,10 @@ put link here
 * [Gheorghe Costinel Malaiasi](https://github.com/Costinel22)
 * [Rajpreet Rehill](https://github.com/RajpreetKR)
 
-## Acknowledgments
-to be added...
+## Acknowledgement
+For this project, we used a range of libaries and technologies. We would like to entend our thanks to the following main technologies used:
+* React
+* Node.js
+* Grommet
+
+
