@@ -9,6 +9,16 @@ The application tracks the user's expenses, allowing them to input any income th
 ## Live
 [Saving Gotchi](https://smart-pet-wallet.netlify.app/)
 
+## Usage 
+
+To start using Saving Gotchi, the app will request that you either sign up or sign in.
+
+Once you are logged in, you will be greeted by the main page for the app.
+
+On the left you can add your income and the Gotchi's image will change depending on the amount. But be careful not to hit 0!
+
+In the middle section of the page, you can add your expenses under the category it falls under. This will then be displayed on the right once you press the 'show recent expenses' button.
+
 ## Screenshot
 ![alt text](image-1.png)
 
