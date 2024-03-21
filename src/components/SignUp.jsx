@@ -21,6 +21,7 @@ import {
   passwordRequirements,
   passwordRulesStrong,
 } from './FormValidation';
+import { Link, NavLink } from 'react-router-dom';
 
  const SignUp = () => {
   const [formValues, setFormValues] = React.useState({
@@ -176,6 +177,19 @@ import {
             <Button label="Sign Up" primary type="submit" />
           </Box>
         </Form>
+        </Box>
+        <Box align="start" margin={{ top: 'medium', bottom: 'small' }}>
+        <NavLink
+          to="/signIn"
+          className={({ isActive }) =>
+            isActive ? 'nav-link active' : 'nav-link'
+          }
+        >
+          For demonstration use this button to go back on Sign In!
+          <Box  background="black" border="2px">
+          Sign In
+          </Box>
+        </NavLink>
       </Box>
     </Box>
   );

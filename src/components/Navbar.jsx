@@ -13,32 +13,12 @@ const Navbar = () => {
     <div>
       <div>
         <NavLink
-          to="/SignIn"
-          className={({ isActive }) =>
-            isActive ? 'nav-link active' : 'nav-link'
-          }
-        >
-          Sign In
-        </NavLink>
-      </div>
-      <div>
-        <NavLink
           to="/signUp"
           className={({ isActive }) =>
             isActive ? 'nav-link active' : 'nav-link'
           }
         >
           Sign Up
-        </NavLink>
-      </div>
-      <div>
-        <NavLink
-          to="/grid"
-          className={({ isActive }) =>
-            isActive ? 'nav-link active' : 'nav-link'
-          }
-        >
-          Main Page
         </NavLink>
       </div>
     </div>

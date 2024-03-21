@@ -205,7 +205,7 @@ const SignIn = () => {
             isActive ? 'nav-link active' : 'nav-link'
           }
         >
-           For demonstration use the button!
+          For demonstration use this button to Sign In!
           <Box  background="black" border="2px">
           Sign In
           </Box>
